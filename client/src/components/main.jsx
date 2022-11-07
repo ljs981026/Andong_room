@@ -10,6 +10,7 @@ class Main extends React.Component {
         <ul>
           <Link to="/room/sol"><li>솔뫼</li></Link>
           <Link to="/room/non"><li>논골</li></Link>
+          <Link to="/around"><li>주변시설</li></Link>
         </ul>
       </div>
     )

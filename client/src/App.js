@@ -7,6 +7,9 @@ import React from 'react';
 import Room1info from './components/room1_info';
 import Room2info from './components/room2_info';
 import queryString from 'query-string';
+import MapSort from './components/map_sort';
+import MapAround from './components/map_around';
+
 // import Rou from './route';
 function App() {
 		// <MapBox {...this.props} />
@@ -22,8 +25,10 @@ function App() {
 						<Route path="/" element={<Main />}></Route>
 						<Route path="/room/sol/*" element={<MapBox />}></Route>
 						<Route path="/room/non/*" element={<MapBox2 />}></Route>
+						<Route path="/around" element={<MapSort />}></Route>
 						<Route path={`/room/sol:r_num`} element={<Room1info />}></Route>
 						<Route path={`/room/non:r_num`} element={<Room2info />}></Route>
+						<Route path={`/around/*`} element={<MapAround />}></Route>
 					</Routes>
 			</BrowserRouter>
 		)
