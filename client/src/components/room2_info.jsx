@@ -22,7 +22,6 @@ class Room2info extends React.Component {
     return select_body;
   }
   render() {
-    // console.log(this.state.rooms)
     let name = this.state.rooms.r_name;
     let addr = this.state.rooms.r_addr;
     let phone = this.state.rooms.r_phone;

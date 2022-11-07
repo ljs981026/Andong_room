@@ -18,15 +18,12 @@ class PlaceInfo extends React.Component {
 
   callApi = async() => {
     const loc = (window.location.pathname)
-    console.log(loc)
     const type = ((loc.split('/'))[2].split(':'))
     const res = await fetch('/api/and_'+type[0]);
     this.setState({type: type[0]})
     const body = await res.json();
     let index = type[1].slice(5,);
     let select_body = body[index]
-    console.log(select_body);
-    console.log(this.state.type[0])
     return select_body;
   }
     

@@ -1,11 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-import { CustomOverlayMap, Map, MapInfoWindow, MapMarker } from 'react-kakao-maps-sdk';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import App from '../App';
+import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
+import { Link } from 'react-router-dom';
 import '../css/map.css'
-import Main from './main';
-
 
 class MapBox extends React.Component {
   state = {
@@ -37,7 +33,6 @@ class MapBox extends React.Component {
     }
     return (
       <div>
-        {/* <RemovableCustomOverlayStyle></RemovableCustomOverlayStyle> */}
         <Map // 지도를 표시할 Container
           center={{
             // 지도의 중심좌표
@@ -51,7 +46,6 @@ class MapBox extends React.Component {
             position: "fixed"
           }}
           level={3} // 지도의 확대 레벨
-          // draggable= { false }
         >
           {positions.map((position, index) => (
             <MapMarker
