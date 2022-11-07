@@ -12,6 +12,7 @@
     "express": "^4.16.4",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "query-string": "^7.1.1",
     "react-kakao-maps-sdk": "^1.1.5",
     "react-router-dom": "^6.4.3"
   },
