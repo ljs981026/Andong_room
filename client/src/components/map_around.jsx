@@ -30,14 +30,16 @@ class MapAround extends React.Component {
   }
   render() {
     console.log(window.location.pathname)
-    let type = (window.location.pathname).slice(8, 9);
-    console.log(type) // f
+    let type = (window.location.pathname).slice(8, );
+    console.log(type)
+    console.log(type)
     let positions = [];
     for(let i = 0; i < this.state.place.length; i++) {
       positions.push({title: this.state.place[i].r_name, 
                     latlng: { lat: this.state.place[i].lat, lng: this.state.place[i].lon},
                     addr: this.state.place[i].r_addr,
-                    price: this.state.place[i].r_price});
+                    price: this.state.place[i].r_price,
+                    sort: this.state.place[i].r_sort});
     }
     console.log(positions)
     return(
@@ -73,6 +75,7 @@ class MapAround extends React.Component {
               title={position.title} 
               addr={position.addr}
               price={position.price}
+              sort={position.sort}
               onClick={() => {
                 this.setState({setIsOpen: true})
                 this.setState({lat: position.latlng.lat})
@@ -105,11 +108,11 @@ class MapAround extends React.Component {
                         <div className="ellipsis">
                           {position.addr}
                         </div>
-                        {/* <div className="jibun ellipsis">
-                          보증금/계약금: {position.price}
-                        </div> */}
+                        <div className="jibun ellipsis">
+                          {position.sort}
+                        </div>
                         <div>
-                          <Link to={`/`}><p>상세보기</p></Link>
+                          <Link to={`/around/${type}:r_num${this.state.index}`}><p>상세보기</p></Link>
                         </div>
                         
                       </div>

@@ -9,15 +9,16 @@ import Room2info from './components/room2_info';
 import queryString from 'query-string';
 import MapSort from './components/map_sort';
 import MapAround from './components/map_around';
+import PlaceInfo from './components/place_info';
+
 
 // import Rou from './route';
 function App() {
 		// <MapBox {...this.props} />
-					
 		let qs = queryString.parse(window.location.search)
 		console.log(window.location.pathname)
 		let index = window.location.pathname
-		index = index.slice(16,18)
+		index = index.slice(8, )
 		console.log(index)
 		return (
 			<BrowserRouter>
@@ -29,6 +30,10 @@ function App() {
 						<Route path={`/room/sol:r_num`} element={<Room1info />}></Route>
 						<Route path={`/room/non:r_num`} element={<Room2info />}></Route>
 						<Route path={`/around/*`} element={<MapAround />}></Route>
+						<Route path={`/around/food:r_num`} element={<PlaceInfo/>}></Route>
+						<Route path={`/around/alchole:r_num`} element={<PlaceInfo/>}></Route>
+						<Route path={`/around/play:r_num`} element={<PlaceInfo/>}></Route>
+						<Route path={`/around/convinience:r_num`} element={<PlaceInfo/>}></Route>
 					</Routes>
 			</BrowserRouter>
 		)
