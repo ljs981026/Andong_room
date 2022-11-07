@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Room1info extends React.Component {
+class Room2info extends React.Component {
   state = {
     rooms: "",
     setIsOpen: false,
@@ -15,9 +15,9 @@ class Room1info extends React.Component {
   }
 
   callApi = async() => {
-    const res =await fetch('/api/sol_room');
+    const res =await fetch('/api/non_room');
     const body = await res.json();
-    let index = (window.location.pathname).slice(15,);
+    let index = (window.location.pathname).slice(15,)
     let select_body = body[index]
     return select_body;
   }
@@ -66,4 +66,4 @@ class Room1info extends React.Component {
   }
 }
 
-export default Room1info;
+export default Room2info;

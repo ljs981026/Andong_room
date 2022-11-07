@@ -34,5 +34,14 @@ app.get('/api/sol_room', (req, res) => {
   )
 })
 
+app.get('/api/non_room', (req, res) => {
+  connection.query(
+    "SELECT * FROM ANDONG_ROOM2",
+    (err, rows, field) => {
+      res.send(rows);
+    }
+  )
+})
+
 app.listen(port, () => console.log(`${port}번에 연결`));
 

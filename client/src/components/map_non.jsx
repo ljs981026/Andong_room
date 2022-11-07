@@ -9,7 +9,7 @@ import Main from './main';
 
 class MapBox extends React.Component {
   state = {
-    rooms: "",
+    rooms2: "",
     setIsOpen: false,
     lat: null,
     lng: null,
@@ -18,22 +18,23 @@ class MapBox extends React.Component {
   
   componentDidMount() {
     this.callApi()
-      .then(res => this.setState({rooms: res}))
+      .then(res => this.setState({rooms2: res}))
       .catch(err => console.log(err));
   }
 
   callApi = async() => {
-    const res = await fetch('/api/sol_room');
+    const res = await fetch('/api/non_room');
     const body = await res.json();
     return body;
   }
   render() {
+    console.log(this.state.rooms2)
     let positions = [];
-    for(let i = 0; i < this.state.rooms.length; i++) {
-      positions.push({title: this.state.rooms[i].r_name, 
-                    latlng: { lat: this.state.rooms[i].lat, lng: this.state.rooms[i].lon},
-                    addr: this.state.rooms[i].r_addr,
-                    price: this.state.rooms[i].r_price});
+    for(let i = 0; i < this.state.rooms2.length; i++) {
+      positions.push({title: this.state.rooms2[i].r_name, 
+                    latlng: { lat: this.state.rooms2[i].lon, lng: this.state.rooms2[i].lat},
+                    addr: this.state.rooms2[i].r_addr,
+                    price: this.state.rooms2[i].r_price});
     }
     return (
       <div>
@@ -41,8 +42,8 @@ class MapBox extends React.Component {
         <Map // 지도를 표시할 Container
           center={{
             // 지도의 중심좌표
-            lat: 36.532155,
-            lng: 128.792270,
+            lat: 36.535155,
+            lng: 128.798270,
           }}
           style={{
             // 지도의 크기
@@ -50,7 +51,7 @@ class MapBox extends React.Component {
             height: "3200px",
             position: "fixed"
           }}
-          level={3} // 지도의 확대 레벨
+          level={2} // 지도의 확대 레벨
           // draggable= { false }
         >
           {positions.map((position, index) => (
@@ -104,7 +105,7 @@ class MapBox extends React.Component {
                           보증금/계약금: {position.price}
                         </div>
                         <div>
-                          <Link to={`/room/sol/:r_num${this.state.index}`}><p>상세보기</p></Link>
+                          <Link to={`/room/non:r_num${this.state.index}`}><p>상세보기{console.log(this.state.index)}</p></Link>
                         </div>
                         
                       </div>
