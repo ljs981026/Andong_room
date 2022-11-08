@@ -19,7 +19,7 @@ class Header extends React.Component {
               <li onClick={redirect()}><Link to="/around/alchole">술집</Link></li>
               <li onClick={redirect()}><Link to="/around/play">놀거리</Link></li>
               <li onClick={redirect()}><Link to="/around/convinience">편의시설</Link></li>
-              <li>로그인</li>
+              <li><Link to="/login">로그인</Link></li>
               <li>회원가입</li>
             </ul>
           </div>
