@@ -1,0 +1,28 @@
+header {
+  width: 100%;
+  /* min-width: 1800px; */
+  height: 40px;
+  background-color: #EBDFB2;
+  margin-top: -16px;
+  /* position: fixed; */
+}
+
+.menu-wrap {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.menu-wrap .menu-bar > ul{
+  font-size: 10px;
+} 
+
+.menu-wrap .menu-bar > ul > li {
+  float: left;
+  line-height: 45px;
+  margin-right: 50px;
+}
+
+.menu-wrap .menu-bar > ul > li:nth-child(7), li:last-child {
+  margin-right: -230px;
+  margin-left: 250px;
+}

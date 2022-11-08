@@ -2,7 +2,7 @@ import React from 'react';
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 import { Link } from 'react-router-dom';
 import '../css/map.css'
-
+import Header from './header.jsx';
 
 class MapAround extends React.Component {
   state = {
@@ -12,22 +12,29 @@ class MapAround extends React.Component {
     lng: null,
     index: null,
   }
-
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({place: res}))
       .catch(err => console.log(err));
   }
 
+  // componentDidUpdate() {
+  //   this.callApi()
+  //     .then(res => this.setState({place: res}))
+  //     .catch(err => console.log(err));
+  // }
+
   callApi = async() => {
     const type = (window.location.pathname).slice(8, )
     const res = await fetch('/api/and_'+type);
     const body = await res.json();
     console.log(body);
+
     return body;
   }
   render() {
     console.log(window.location.pathname)
+    console.log(this.state.place)
     let type = (window.location.pathname).slice(8, );
     console.log(type)
     console.log(type)
@@ -40,8 +47,10 @@ class MapAround extends React.Component {
                     sort: this.state.place[i].r_sort});
     }
     console.log(positions)
+    
     return(
       <div>
+        <Header />
         <Map // 지도를 표시할 Container
           center={{
             // 지도의 중심좌표

@@ -2,6 +2,7 @@ import React from 'react';
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 import { Link } from 'react-router-dom';
 import '../css/map.css'
+import Header from './header';
 
 class MapBox extends React.Component {
   state = {
@@ -33,6 +34,7 @@ class MapBox extends React.Component {
     }
     return (
       <div>
+        <Header />
         <Map // 지도를 표시할 Container
           center={{
             // 지도의 중심좌표

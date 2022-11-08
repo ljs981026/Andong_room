@@ -19,7 +19,10 @@ function App() {
 						<Route path="/around" element={<MapSort />}></Route>
 						<Route path={`/room/sol:r_num`} element={<Room1info />}></Route>
 						<Route path={`/room/non:r_num`} element={<Room2info />}></Route>
-						<Route path={`/around/*`} element={<MapAround />}></Route>
+						<Route path={`/around/food`} element={<MapAround />}></Route>
+						<Route path={`/around/alchole`} element={<MapAround />}></Route>
+						<Route path={`/around/play`} element={<MapAround />}></Route>
+						<Route path={`/around/convinience`} element={<MapAround />}></Route>
 						<Route path={`/around/food:r_num`} element={<PlaceInfo/>}></Route>
 						<Route path={`/around/alchole:r_num`} element={<PlaceInfo/>}></Route>
 						<Route path={`/around/play:r_num`} element={<PlaceInfo/>}></Route>
