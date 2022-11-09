@@ -24,3 +24,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+client/.gitignore
+client/src/images/히트투원룸/히트투원룸_3.jpg
+client/src/images

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ImageSlide from './imageslide';
 class Room1info extends React.Component {
   state = {
     rooms: "",
@@ -22,6 +22,7 @@ class Room1info extends React.Component {
     return select_body;
   }
   render() {
+    console.log(this.state.rooms)
     let name = this.state.rooms.r_name;
     let addr = this.state.rooms.r_addr;
     let phone = this.state.rooms.r_phone;
@@ -47,8 +48,11 @@ class Room1info extends React.Component {
       return option_content;
     }
     return(
+      <div>
+        
       <ul>
-        <li><img src="https://placeimg.com/500/500/any" alt="" /></li>
+        {/* <li><img src={process.env.PUBLIC_URL + '/images/거성원룸/거성원룸_1.jpg'} alt="d" /></li> */}
+        <ImageSlide num = {this.state.rooms.r_num} />
         <li>원룸이름: {name}</li>
         <li>주소: {addr}</li>
         <li>전화번호: {phone}</li>
@@ -61,6 +65,7 @@ class Room1info extends React.Component {
         <li>평수: {size}평</li>
         <li>옵션: {option_view(option)}</li>
       </ul>
+      </div>
     )
   }
 }

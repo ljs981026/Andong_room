@@ -32,6 +32,7 @@ class MapBox extends React.Component {
                     addr: this.state.rooms[i].r_addr,
                     price: this.state.rooms[i].r_price});
     }
+    console.log(this.state.rooms)
     return (
       <div>
         <Header />

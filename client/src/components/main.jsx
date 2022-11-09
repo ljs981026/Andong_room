@@ -8,6 +8,8 @@ class Main extends React.Component {
       <div>
         <h2>안녕하세요</h2>
         <ul>
+          
+          
           <Link to="/room/sol"><li>솔뫼</li></Link>
           <Link to="/room/non"><li>논골</li></Link>
           <Link to="/around"><li>주변시설</li></Link>
